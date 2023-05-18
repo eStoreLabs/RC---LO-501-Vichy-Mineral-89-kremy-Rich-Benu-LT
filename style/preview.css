@@ -1,0 +1,10 @@
+/* css reset */
+html,
+body,
+div {
+  margin: 0;
+}
+body {
+  display: grid;
+  place-items: center;
+}

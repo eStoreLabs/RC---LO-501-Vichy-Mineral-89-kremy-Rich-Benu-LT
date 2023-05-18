@@ -1,0 +1,550 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap");
+
+// ==================== //
+// ====== MIXINS ====== //
+// ==================== //
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin text {
+  font-family: "League Spartan", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+  text-align: center;
+  color: inherit;
+}
+
+@mixin heading {
+  font-weight: 600;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  margin: 1rem;
+}
+
+@mixin sans {
+  font-family: system-ui, sans-serif;
+  font-size: 0.7rem;
+}
+
+@mixin pseudo-border {
+  content: url("../images/border.png");
+  position: absolute;
+}
+
+@mixin head2 {
+  margin: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+// variables
+$narrow: 320px;
+$mobile: 560px;
+$tablet: 670px;
+
+// ===================== //
+// ====== STYLING ====== //
+// ===================== //
+
+#es-vichy {
+  border: 0;
+  padding: 0;
+  max-width: 768px;
+  overflow: hidden;
+  cursor: default;
+  @include flex-center;
+  flex-direction: column;
+  gap: 3rem;
+
+  @include text;
+
+  // === elements === //
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  h2 {
+    @include text;
+    @include heading;
+    margin: 2rem;
+    @media screen and (max-width: $narrow) {
+      margin-inline: 0;
+    }
+  }
+
+  p {
+    @include text;
+    margin: 1rem;
+  }
+
+  img {
+    display: block;
+    user-select: none;
+  }
+
+  a {
+    cursor: pointer;
+  }
+
+  span {
+    &.semibold {
+      font-weight: 600;
+    }
+  }
+
+  // === sections === //
+  > div {
+    width: 100%;
+  }
+
+  .es-section {
+    &_head {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      @media screen and (max-width: $mobile) {
+        flex-direction: column;
+      }
+      > div {
+        position: relative;
+      }
+      p {
+        @include text;
+        @include heading;
+        position: absolute;
+        bottom: 0;
+        font-weight: 400;
+        &.es-heading-1 {
+          color: white;
+          font-size: 1.6rem;
+          text-align: left;
+          width: 33.333%;
+          span.es-bold {
+            font-weight: 600;
+          }
+        }
+        &.es-heading-2 {
+          @include head2;
+          width: 245px;
+          font-size: 0.8rem;
+          font-weight: 400;
+          line-height: 1;
+          span.es-mineral {
+            line-height: 1.5;
+            font-size: 1.7rem;
+          }
+        }
+        @media screen and (max-width: $narrow) {
+          position: static;
+          transform: translateX(0) !important;
+          &.es-heading-1 {
+            color: black;
+          }
+          &.es-heading-2 {
+            margin: auto;
+          }
+        }
+      }
+      > div > img {
+        max-width: 100%;
+      }
+      img.es-vichy-logo {
+        @include head2;
+        position: absolute;
+        top: 10px;
+        width: 50%;
+        max-width: 196px;
+      }
+    }
+
+    &_descr {
+      padding: 0.5rem 0 0.9rem 0;
+      font-size: 1.1rem;
+      position: relative;
+      &::before {
+        @include pseudo-border;
+        top: 0;
+        left: 0.5rem;
+      }
+      &::after {
+        @include pseudo-border;
+        bottom: 0;
+        right: 0.5rem;
+        rotate: 180deg;
+      }
+      h2 {
+        font-size: 1.5rem;
+        font-weight: 400;
+      }
+    }
+
+    &_numbers {
+      position: relative;
+      min-height: 438px;
+      &::after {
+        position: absolute;
+        bottom: -100px;
+        right: 0;
+        z-index: -1;
+        content: url("../images/cream_birdseye.png");
+        transition: all ease-in-out 0.5s;
+        @media screen and (max-width: $tablet) {
+          filter: opacity(0.25) blur(1px);
+        }
+      }
+      @media screen and (max-width: $narrow) {
+        height: 600px;
+      }
+      &_headings {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        transform: translatey(-35%);
+        max-width: 320px;
+        p {
+          @include text;
+          @include heading;
+          font-weight: 500;
+          text-align: left;
+          sup {
+            font-size: 0.75rem;
+            font-weight: 400;
+            user-select: none;
+          }
+          span {
+            &.es-span_number {
+              margin-block-end: 0;
+              text-transform: none;
+              font-size: 2.3rem;
+              line-height: 1;
+              color: #00b3d3;
+            }
+            &.es-span_thin {
+              font-weight: 400;
+            }
+          }
+        }
+        @media screen and (max-width: $mobile) {
+          left: 0;
+          transform: translateY(-25%);
+        }
+      }
+    }
+
+    &_squares {
+      &_grid {
+        display: grid;
+        grid-auto-rows: 360px;
+        gap: 1rem;
+        justify-content: center;
+        align-content: center;
+        justify-items: center;
+        grid-template-columns: repeat(4, 1fr);
+        @media screen and (min-width: $mobile) and (max-width: $tablet) {
+          grid-template-columns: repeat(3, 1fr);
+          &_element:last-of-type {
+            grid-column-start: 2;
+          }
+        }
+        @media screen and (max-width: $mobile) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        @media screen and (max-width: $narrow) {
+          grid-template-columns: repeat(1, 1fr);
+          margin-top: 5rem;
+        }
+        &_element {
+          max-width: 180px;
+          &_img {
+            position: relative;
+            transition: all ease-in-out 0.25s;
+            &:hover {
+              transform: scale(1.1);
+              img {
+                filter: brightness(1.1);
+              }
+            }
+            > img {
+              transition: all ease-in-out 0.25s;
+              width: 100%;
+            }
+            &_overlay {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              z-index: 5;
+              @include heading;
+              font-size: 0.9rem;
+              line-height: 1;
+              margin: 0;
+              background-color: hsl(0, 0%, 100%, 0.65);
+              min-height: 52px;
+              width: 75%;
+              display: grid;
+              place-items: center;
+            }
+          }
+          > p {
+            font-weight: 400;
+            font-size: 0.9rem;
+            line-height: normal;
+          }
+        }
+      }
+    }
+
+    &_icons {
+      position: relative;
+      height: 360px;
+      &::before {
+        content: url("../images/background-smear.png");
+        position: absolute;
+        top: -15%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        width: 100%;
+      }
+      &::after {
+        content: url("../images/cream_top.png");
+        position: absolute;
+        bottom: -35%;
+        right: 0;
+        z-index: -1;
+        @media screen and (max-width: $tablet) {
+          display: none;
+        }
+        transition: all ease-in-out 0.25s;
+        @media screen and (max-width: ($tablet + 90px)) {
+          filter: opacity(0.5);
+        }
+      }
+      &_container {
+        position: relative;
+        left: 5%;
+        width: 69%;
+        max-width: 470px;
+        display: grid;
+        justify-items: center;
+        @media screen and (max-width: $tablet) {
+          width: 100%;
+          max-width: 100%;
+          position: static;
+        }
+        &_grid {
+          position: relative;
+          top: 30%;
+          width: 100%;
+          display: grid;
+          grid-auto-flow: row;
+          grid-template-columns: repeat(3, 1fr);
+          justify-items: center;
+          @media screen and (max-width: $tablet) {
+            top: 0;
+            width: 100%;
+          }
+          @media screen and (max-width: $mobile) {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+          }
+          &_element {
+            display: flex;
+            flex-direction: column;
+            max-width: 120px;
+            align-items: center;
+            cursor: default;
+            transition: all ease-in-out 0.25s;
+            &:hover {
+              transform: scale(1.1);
+            }
+            &_icon {
+              display: grid;
+              place-items: center;
+              width: 100%;
+              height: 64px;
+              @media screen and (max-width: $mobile) {
+                width: 64px;
+                min-width: 64px;
+              }
+            }
+            @media screen and (max-width: $mobile) {
+              flex-direction: row;
+              gap: 1rem;
+              width: 50%;
+              max-width: 400px;
+              text-align: left;
+            }
+            @media screen and (max-width: $narrow) {
+              flex-direction: column;
+              text-align: center;
+            }
+          }
+        }
+      }
+      @media screen and (max-width: $narrow) {
+        height: 500px;
+        &_container_grid {
+          top: 0;
+        }
+      }
+    }
+
+    &_usage {
+      position: relative;
+      &_container {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        background: linear-gradient(94deg, #1e5c8c 0%, #2291d1 100%);
+        padding: 1rem 3rem;
+        > * {
+          text-align: left;
+          margin-inline: 0;
+          color: white;
+        }
+        h2 {
+          margin-block: 1rem;
+        }
+      }
+      img {
+        margin: 3rem;
+      }
+      @media screen and (max-width: $tablet) {
+        margin-top: 3rem;
+        display: grid;
+        place-items: center;
+        &_container,
+        img {
+          position: relative;
+          margin: 0;
+          width: 100%;
+          max-width: 550px;
+        }
+        img {
+          max-width: 370px;
+        }
+      }
+    }
+
+    &_routine {
+      display: grid;
+      justify-items: center;
+      &_podium {
+        display: flex;
+        flex-direction: row;
+        &_element {
+          width: 100%;
+          h3,
+          h4 {
+            @include heading;
+            font-size: 1rem;
+            margin: 0.5rem;
+          }
+          .es-podium_fleximg img {
+            transition: all ease-out 0.2s;
+            &:hover {
+              filter: brightness(1.2);
+            }
+          }
+          h3 {
+            font-weight: 700;
+          }
+          h4 {
+            font-weight: 400;
+          }
+          p {
+            @include text;
+            @include sans;
+          }
+          .es-podium-link {
+            background-color: #1f6195;
+            display: inline-block;
+            max-width: 100px;
+            margin: auto 2rem;
+            padding: 0.5rem 1.25rem;
+            &:hover {
+              background-color: #3988c4;
+            }
+            @include text;
+            @include sans;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: white;
+            transition: background-color 0.1s ease-out;
+          }
+          @media screen and (min-width: $mobile) {
+            .es-podium_fleximg {
+              display: none;
+            }
+          }
+        }
+      }
+      img {
+        width: 100%;
+        max-width: 644px;
+      }
+      @media screen and (max-width: $mobile) {
+        > img {
+          display: none;
+        }
+        &_podium {
+          flex-direction: column;
+          gap: 3rem;
+          &_element {
+            display: flex;
+            div {
+              width: 100%;
+              max-height: 160px;
+              object-fit: contain;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              > * {
+                margin: 0;
+              }
+              img {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+              }
+            }
+            .es-podium-link {
+              text-align: center;
+              margin: 1rem;
+            }
+            &:nth-of-type(2) {
+              > .es-podium_fleximg > img {
+                height: 60%;
+              }
+              flex-direction: row-reverse;
+            }
+            @media screen and (max-width: $narrow) {
+              flex-direction: column-reverse;
+              padding-inline: 1rem;
+              &:nth-of-type(2) {
+                flex-direction: column-reverse;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  p.footer {
+    @include text;
+    @include sans;
+  }
+}
