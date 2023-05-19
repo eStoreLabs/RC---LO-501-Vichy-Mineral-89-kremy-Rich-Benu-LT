@@ -6,7 +6,7 @@
 
 ### LINKS TO DESIGNS (in .xd or .psd)
 
-[Google Drive](https://drive.google.com/drive/folders/17lnUnn0PwDT0a3Q9OPLuxDZtQVVvWzKo)
+[Google Drive](https://drive.google.com/drive/folders/1zrZCNRWMhlwSLDHh-yZI_tRl3neDUSja)
 
 ### DESTINATION (name of e-retailer or general/pure)
 
