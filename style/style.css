@@ -2,7 +2,7 @@
 #es-rc #es-rc-content {
   border: 0;
   padding: 0;
-  max-width: 768px;
+  max-width: 1000px;
   overflow: hidden;
   cursor: default;
   display: flex;
@@ -74,6 +74,7 @@
 }
 #es-rc #es-rc-content .es-section_head > div {
   position: relative;
+  width: 100%;
 }
 #es-rc #es-rc-content .es-section_head p {
   font-family: "League Spartan", sans-serif;
@@ -125,7 +126,7 @@
   }
 }
 #es-rc #es-rc-content .es-section_head > div > img {
-  max-width: 100%;
+  width: 100%;
 }
 #es-rc #es-rc-content .es-section_head img.es-vichy-logo {
   margin: 0;
@@ -304,6 +305,11 @@
   z-index: -1;
   width: 100%;
 }
+@media screen and (min-width: 860px) {
+  #es-rc #es-rc-content .es-section_icons::before {
+    transform: translateX(-60%);
+  }
+}
 #es-rc #es-rc-content .es-section_icons::after {
   content: url("../images/cream_top.png");
   position: absolute;
@@ -422,6 +428,11 @@
 }
 #es-rc #es-rc-content .es-section_usage_container h2 {
   margin-block: 1rem;
+}
+@media screen and (min-width: 860px) {
+  #es-rc #es-rc-content .es-section_usage_container {
+    transform: translate(-15%, -50%);
+  }
 }
 #es-rc #es-rc-content .es-section_usage img {
   margin: 3rem;
