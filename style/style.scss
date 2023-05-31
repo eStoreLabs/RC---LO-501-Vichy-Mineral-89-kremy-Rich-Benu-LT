@@ -43,6 +43,13 @@
   transform: translateX(-50%);
 }
 
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 // variables
 $narrow: 320px;
 $mobile: 560px;
@@ -113,10 +120,45 @@ $desktop: 860px;
       flex-direction: row;
       align-items: center;
       @media screen and (max-width: $mobile) {
-        flex-direction: column;
+        flex-direction: column-reverse;
       }
       > div {
         position: relative;
+        width: 100%;
+        aspect-ratio: 1/1;
+        &:nth-of-type(2) > img:not(.es-header-absolute) {
+          width: 80%;
+        }
+      }
+      > div:first-of-type {
+        @media screen and (max-width: $narrow) {
+          > img {
+            position: static;
+            transform: translate(0%, 0%);
+          }
+          > p {
+            color: black;
+            font-size: 1.25rem;
+            width: 90%;
+          }
+        }
+      }
+      img.es-vichy-logo {
+        @include head2;
+        position: absolute;
+        top: 10px;
+        width: 50%;
+        max-width: 196px;
+        z-index: 1;
+      }
+      img.es-header-mineral {
+        @include head2;
+        @include center;
+        width: 50%;
+        max-width: 280px;
+      }
+      > div > img {
+        @include center;
         width: 100%;
       }
       p {
@@ -125,6 +167,7 @@ $desktop: 860px;
         position: absolute;
         bottom: 0;
         font-weight: 400;
+        z-index: 100;
         &.es-heading-1 {
           color: white;
           font-size: 1.6rem;
@@ -133,10 +176,14 @@ $desktop: 860px;
           span.es-bold {
             font-weight: 600;
           }
+          @media screen and (max-width: $narrow) {
+            position: static;
+          }
         }
         &.es-heading-2 {
           @include head2;
-          width: 245px;
+          width: 100%;
+          max-width: 245px;
           font-size: 0.8rem;
           font-weight: 400;
           line-height: 1;
@@ -144,27 +191,13 @@ $desktop: 860px;
             line-height: 1.5;
             font-size: 1.7rem;
           }
-        }
-        @media screen and (max-width: $narrow) {
-          position: static;
-          transform: translateX(0) !important;
-          &.es-heading-1 {
-            color: black;
-          }
-          &.es-heading-2 {
-            margin: auto;
+          @media screen and (max-width: $narrow) {
+            font-size: 0.9rem;
+            > span:nth-of-type(2) {
+              display: none;
+            }
           }
         }
-      }
-      > div > img {
-        width: 100%;
-      }
-      img.es-vichy-logo {
-        @include head2;
-        position: absolute;
-        top: 10px;
-        width: 50%;
-        max-width: 196px;
       }
     }
 
@@ -280,10 +313,7 @@ $desktop: 860px;
               width: 100%;
             }
             &_overlay {
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
+              @include center;
               z-index: 5;
               @include heading;
               font-size: 0.9rem;

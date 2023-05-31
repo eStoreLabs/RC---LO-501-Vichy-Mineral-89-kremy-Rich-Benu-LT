@@ -69,11 +69,54 @@
 }
 @media screen and (max-width: 560px) {
   #es-rc #es-rc-content .es-section_head {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 }
 #es-rc #es-rc-content .es-section_head > div {
   position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+#es-rc #es-rc-content .es-section_head > div:nth-of-type(2) > img:not(.es-header-absolute) {
+  width: 80%;
+}
+@media screen and (max-width: 320px) {
+  #es-rc #es-rc-content .es-section_head > div:first-of-type > img {
+    position: static;
+    transform: translate(0%, 0%);
+  }
+  #es-rc #es-rc-content .es-section_head > div:first-of-type > p {
+    color: black;
+    font-size: 1.25rem;
+    width: 90%;
+  }
+}
+#es-rc #es-rc-content .es-section_head img.es-vichy-logo {
+  margin: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: 10px;
+  width: 50%;
+  max-width: 196px;
+  z-index: 1;
+}
+#es-rc #es-rc-content .es-section_head img.es-header-mineral {
+  margin: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  max-width: 280px;
+}
+#es-rc #es-rc-content .es-section_head > div > img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
 }
 #es-rc #es-rc-content .es-section_head p {
@@ -90,6 +133,7 @@
   position: absolute;
   bottom: 0;
   font-weight: 400;
+  z-index: 100;
 }
 #es-rc #es-rc-content .es-section_head p.es-heading-1 {
   color: white;
@@ -100,11 +144,17 @@
 #es-rc #es-rc-content .es-section_head p.es-heading-1 span.es-bold {
   font-weight: 600;
 }
+@media screen and (max-width: 320px) {
+  #es-rc #es-rc-content .es-section_head p.es-heading-1 {
+    position: static;
+  }
+}
 #es-rc #es-rc-content .es-section_head p.es-heading-2 {
   margin: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 245px;
+  width: 100%;
+  max-width: 245px;
   font-size: 0.8rem;
   font-weight: 400;
   line-height: 1;
@@ -114,28 +164,12 @@
   font-size: 1.7rem;
 }
 @media screen and (max-width: 320px) {
-  #es-rc #es-rc-content .es-section_head p {
-    position: static;
-    transform: translateX(0) !important;
-  }
-  #es-rc #es-rc-content .es-section_head p.es-heading-1 {
-    color: black;
-  }
   #es-rc #es-rc-content .es-section_head p.es-heading-2 {
-    margin: auto;
+    font-size: 0.9rem;
   }
-}
-#es-rc #es-rc-content .es-section_head > div > img {
-  width: 100%;
-}
-#es-rc #es-rc-content .es-section_head img.es-vichy-logo {
-  margin: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  position: absolute;
-  top: 10px;
-  width: 50%;
-  max-width: 196px;
+  #es-rc #es-rc-content .es-section_head p.es-heading-2 > span:nth-of-type(2) {
+    display: none;
+  }
 }
 #es-rc #es-rc-content .es-section_descr {
   padding: 0.5rem 0 0.9rem 0;
