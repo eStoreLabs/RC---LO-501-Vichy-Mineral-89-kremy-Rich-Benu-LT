@@ -482,6 +482,7 @@ $desktop: 860px;
         display: flex;
         flex-direction: row;
         &_element {
+          display: flex;
           width: 100%;
           h3,
           h4 {
@@ -489,10 +490,15 @@ $desktop: 860px;
             font-size: 1rem;
             margin: 0.5rem;
           }
-          .es-podium_fleximg img {
-            transition: all ease-out 0.2s;
-            &:hover {
-              filter: brightness(1.2);
+          .es-podium_fleximg {
+            z-index: 0;
+            img {
+              transition: filter ease-out 0.2s;
+              max-width: 100%;
+              object-fit: contain;
+              &:hover {
+                filter: brightness(1.2);
+              }
             }
           }
           h3 {
@@ -521,21 +527,47 @@ $desktop: 860px;
             color: white;
             transition: background-color 0.1s ease-out;
           }
-          @media screen and (min-width: $mobile) {
+          @media (min-width: $mobile) {
+            // _element
+            flex-direction: column-reverse;
+            max-width: 33.333%;
+            div:first-of-type {
+              z-index: 1;
+            }
             .es-podium_fleximg {
-              display: none;
+              display: grid;
+              place-items: center;
+              width: 100%;
+              height: 100%;
+              img {
+                max-height: 512px;
+              }
+            }
+            &:first-of-type .es-podium_fleximg {
+              align-self: center;
+              img {
+                width: 55%;
+              }
+            }
+            &:nth-of-type(2) .es-podium_fleximg {
+              position: relative;
+              img {
+                position: absolute;
+                bottom: -40px;
+                transform: translateX(2px);
+                max-width: 120%;
+              }
+            }
+            &:last-of-type .es-podium_fleximg {
+              align-self: center;
+              img {
+                width: 60%;
+              }
             }
           }
         }
       }
-      img {
-        width: 100%;
-        max-width: 644px;
-      }
-      @media screen and (max-width: $mobile) {
-        > img {
-          display: none;
-        }
+      @media screen and (max-width: calc($mobile - 1px)) {
         &_podium {
           flex-direction: column;
           gap: 3rem;
@@ -544,7 +576,6 @@ $desktop: 860px;
             div {
               width: 100%;
               max-height: 160px;
-              object-fit: contain;
               display: flex;
               flex-direction: column;
               justify-content: center;
@@ -552,11 +583,9 @@ $desktop: 860px;
               > * {
                 margin: 0;
               }
-              img {
-                height: 100%;
-                width: 100%;
-                object-fit: contain;
-              }
+            }
+            .es-podium_fleximg > img {
+              max-height: 100%;
             }
             .es-podium-link {
               text-align: center;

@@ -497,6 +497,7 @@
   flex-direction: row;
 }
 #es-rc #es-rc-content .es-section_routine_podium_element {
+  display: flex;
   width: 100%;
 }
 #es-rc #es-rc-content .es-section_routine_podium_element h3,
@@ -508,8 +509,13 @@
   font-size: 1rem;
   margin: 0.5rem;
 }
+#es-rc #es-rc-content .es-section_routine_podium_element .es-podium_fleximg {
+  z-index: 0;
+}
 #es-rc #es-rc-content .es-section_routine_podium_element .es-podium_fleximg img {
-  transition: all ease-out 0.2s;
+  transition: filter ease-out 0.2s;
+  max-width: 100%;
+  object-fit: contain;
 }
 #es-rc #es-rc-content .es-section_routine_podium_element .es-podium_fleximg img:hover {
   filter: brightness(1.2);
@@ -552,19 +558,46 @@
 #es-rc #es-rc-content .es-section_routine_podium_element .es-podium-link:hover {
   background-color: #3988c4;
 }
-@media screen and (min-width: 560px) {
+@media (min-width: 560px) {
+  #es-rc #es-rc-content .es-section_routine_podium_element {
+    flex-direction: column-reverse;
+    max-width: 33.333%;
+  }
+  #es-rc #es-rc-content .es-section_routine_podium_element div:first-of-type {
+    z-index: 1;
+  }
   #es-rc #es-rc-content .es-section_routine_podium_element .es-podium_fleximg {
-    display: none;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  #es-rc #es-rc-content .es-section_routine_podium_element .es-podium_fleximg img {
+    max-height: 512px;
+  }
+  #es-rc #es-rc-content .es-section_routine_podium_element:first-of-type .es-podium_fleximg {
+    align-self: center;
+  }
+  #es-rc #es-rc-content .es-section_routine_podium_element:first-of-type .es-podium_fleximg img {
+    width: 55%;
+  }
+  #es-rc #es-rc-content .es-section_routine_podium_element:nth-of-type(2) .es-podium_fleximg {
+    position: relative;
+  }
+  #es-rc #es-rc-content .es-section_routine_podium_element:nth-of-type(2) .es-podium_fleximg img {
+    position: absolute;
+    bottom: -40px;
+    transform: translateX(2px);
+    max-width: 120%;
+  }
+  #es-rc #es-rc-content .es-section_routine_podium_element:last-of-type .es-podium_fleximg {
+    align-self: center;
+  }
+  #es-rc #es-rc-content .es-section_routine_podium_element:last-of-type .es-podium_fleximg img {
+    width: 60%;
   }
 }
-#es-rc #es-rc-content .es-section_routine img {
-  width: 100%;
-  max-width: 644px;
-}
-@media screen and (max-width: 560px) {
-  #es-rc #es-rc-content .es-section_routine > img {
-    display: none;
-  }
+@media screen and (max-width: 559px) {
   #es-rc #es-rc-content .es-section_routine_podium {
     flex-direction: column;
     gap: 3rem;
@@ -575,7 +608,6 @@
   #es-rc #es-rc-content .es-section_routine_podium_element div {
     width: 100%;
     max-height: 160px;
-    object-fit: contain;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -584,10 +616,8 @@
   #es-rc #es-rc-content .es-section_routine_podium_element div > * {
     margin: 0;
   }
-  #es-rc #es-rc-content .es-section_routine_podium_element div img {
-    height: 100%;
-    width: 100%;
-    object-fit: contain;
+  #es-rc #es-rc-content .es-section_routine_podium_element .es-podium_fleximg > img {
+    max-height: 100%;
   }
   #es-rc #es-rc-content .es-section_routine_podium_element .es-podium-link {
     text-align: center;
@@ -600,7 +630,7 @@
     height: 60%;
   }
 }
-@media screen and (max-width: 560px) and (max-width: 320px) {
+@media screen and (max-width: 559px) and (max-width: 320px) {
   #es-rc #es-rc-content .es-section_routine_podium_element {
     flex-direction: column-reverse;
     padding-inline: 1rem;
