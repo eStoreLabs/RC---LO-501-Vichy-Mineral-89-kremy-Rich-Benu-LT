@@ -513,7 +513,6 @@ $desktop: 860px;
           }
           .es-podium-link {
             background-color: #1f6195;
-            display: inline-block;
             max-width: 100px;
             margin: auto 2rem;
             padding: 0.5rem 1.25rem;
@@ -533,6 +532,8 @@ $desktop: 860px;
             max-width: 33.333%;
             div:first-of-type {
               z-index: 1;
+              min-height: 170px;
+              position: relative;
             }
             .es-podium_fleximg {
               display: grid;
@@ -555,7 +556,6 @@ $desktop: 860px;
                 position: absolute;
                 bottom: -40px;
                 transform: translateX(2px);
-                max-width: 120%;
               }
             }
             &:last-of-type .es-podium_fleximg {
@@ -563,6 +563,14 @@ $desktop: 860px;
               img {
                 width: 60%;
               }
+            }
+            .es-podium-link {
+              display: block;
+              position: absolute;
+              bottom: 0;
+              left: 50%;
+              transform: translateX(-50%);
+              margin: 0;
             }
           }
         }

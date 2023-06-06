@@ -538,7 +538,6 @@
 }
 #es-rc #es-rc-content .es-section_routine_podium_element .es-podium-link {
   background-color: #1f6195;
-  display: inline-block;
   max-width: 100px;
   margin: auto 2rem;
   padding: 0.5rem 1.25rem;
@@ -565,6 +564,8 @@
   }
   #es-rc #es-rc-content .es-section_routine_podium_element div:first-of-type {
     z-index: 1;
+    min-height: 170px;
+    position: relative;
   }
   #es-rc #es-rc-content .es-section_routine_podium_element .es-podium_fleximg {
     display: grid;
@@ -588,13 +589,20 @@
     position: absolute;
     bottom: -40px;
     transform: translateX(2px);
-    max-width: 120%;
   }
   #es-rc #es-rc-content .es-section_routine_podium_element:last-of-type .es-podium_fleximg {
     align-self: center;
   }
   #es-rc #es-rc-content .es-section_routine_podium_element:last-of-type .es-podium_fleximg img {
     width: 60%;
+  }
+  #es-rc #es-rc-content .es-section_routine_podium_element .es-podium-link {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
   }
 }
 @media screen and (max-width: 559px) {
