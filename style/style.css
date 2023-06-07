@@ -587,7 +587,7 @@
   }
   #es-rc #es-rc-content .es-section_routine_podium_element:nth-of-type(2) .es-podium_fleximg img {
     position: absolute;
-    bottom: -40px;
+    bottom: -30px;
     transform: translateX(2px);
   }
   #es-rc #es-rc-content .es-section_routine_podium_element:last-of-type .es-podium_fleximg {
@@ -603,6 +603,37 @@
     left: 50%;
     transform: translateX(-50%);
     margin: 0;
+  }
+}
+@media (min-width: 560px) {
+  #es-rc #es-rc-content .es-section_routine_podium {
+    list-style-type: none;
+    counter-reset: es-counter 0;
+  }
+  #es-rc #es-rc-content .es-section_routine_podium_element {
+    counter-increment: es-counter 1;
+    position: relative;
+  }
+  #es-rc #es-rc-content .es-section_routine_podium_element::before {
+    content: counter(es-counter);
+    position: absolute;
+    left: 50%;
+    right: -20%;
+    z-index: -1;
+    color: #ddd;
+    font-size: 12rem;
+    font-weight: 500;
+    font-family: "Poppins", "League Spartan", system-ui, sans-serif;
+  }
+  #es-rc #es-rc-content .es-section_routine_podium_element:nth-of-type(1)::before {
+    top: -7%;
+  }
+  #es-rc #es-rc-content .es-section_routine_podium_element:nth-of-type(2)::before {
+    top: 10%;
+    right: 12%;
+  }
+  #es-rc #es-rc-content .es-section_routine_podium_element:nth-of-type(3)::before {
+    top: 22%;
   }
 }
 @media screen and (max-width: 559px) {
