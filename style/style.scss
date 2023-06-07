@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&family=Poppins:wght@500&display=swap");
 
 // ==================== //
 // ====== MIXINS ====== //
@@ -497,7 +497,7 @@ $desktop: 860px;
               max-width: 100%;
               object-fit: contain;
               &:hover {
-                filter: brightness(1.2);
+                filter: brightness(1.1);
               }
             }
           }
@@ -526,7 +526,7 @@ $desktop: 860px;
             color: white;
             transition: background-color 0.1s ease-out;
           }
-          @media (min-width: $mobile) {
+          @media (min-width: $mobile + 1px) {
             // _element
             flex-direction: column-reverse;
             max-width: 33.333%;
@@ -554,8 +554,9 @@ $desktop: 860px;
               position: relative;
               img {
                 position: absolute;
-                bottom: -30px;
-                transform: translateX(2px);
+                bottom: -40px;
+                transform: translateX(2%);
+                max-width: 110%;
               }
             }
             &:last-of-type .es-podium_fleximg {
@@ -575,7 +576,7 @@ $desktop: 860px;
           }
         }
       }
-      @media (min-width: $mobile) {
+      @media (min-width: $mobile + 1px) {
         &_podium {
           list-style-type: none;
           counter-reset: es-counter 0;
@@ -593,20 +594,45 @@ $desktop: 860px;
               font-weight: 500;
               font-family: "Poppins", "League Spartan", system-ui, sans-serif;
             }
-            &:nth-of-type(1)::before {
-              top: -7%;
+            &:nth-of-type(1) {
+              div:last-child {
+                transform: translateX(5%);
+              }
+              &::before {
+                top: -7%;
+              }
+              &::after {
+                content: "";
+                background-image: url("../images/bubble.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                position: absolute;
+                z-index: -1;
+                top: 15%;
+                left: 47%;
+                height: 75%;
+                width: 75%;
+              }
             }
-            &:nth-of-type(2)::before {
-              top: 10%;
-              right: 12%;
+            &:nth-of-type(2) {
+              &::before {
+                top: 6.5%;
+                right: 12%;
+              }
             }
-            &:nth-of-type(3)::before {
-              top: 22%;
+            &:nth-of-type(3) {
+              div:last-child {
+                transform: translateX(-5%);
+              }
+              &::before {
+                top: 23%;
+                right: -16%;
+              }
             }
           }
         }
       }
-      @media screen and (max-width: calc($mobile - 1px)) {
+      @media screen and (max-width: $mobile) {
         &_podium {
           flex-direction: column;
           gap: 3rem;

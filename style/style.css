@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;400;500;600;700&family=Poppins:wght@500&display=swap");
 #es-rc #es-rc-content {
   border: 0;
   padding: 0;
@@ -518,7 +518,7 @@
   object-fit: contain;
 }
 #es-rc #es-rc-content .es-section_routine_podium_element .es-podium_fleximg img:hover {
-  filter: brightness(1.2);
+  filter: brightness(1.1);
 }
 #es-rc #es-rc-content .es-section_routine_podium_element h3 {
   font-weight: 700;
@@ -557,7 +557,7 @@
 #es-rc #es-rc-content .es-section_routine_podium_element .es-podium-link:hover {
   background-color: #3988c4;
 }
-@media (min-width: 560px) {
+@media (min-width: 561px) {
   #es-rc #es-rc-content .es-section_routine_podium_element {
     flex-direction: column-reverse;
     max-width: 33.333%;
@@ -587,8 +587,9 @@
   }
   #es-rc #es-rc-content .es-section_routine_podium_element:nth-of-type(2) .es-podium_fleximg img {
     position: absolute;
-    bottom: -30px;
-    transform: translateX(2px);
+    bottom: -40px;
+    transform: translateX(2%);
+    max-width: 110%;
   }
   #es-rc #es-rc-content .es-section_routine_podium_element:last-of-type .es-podium_fleximg {
     align-self: center;
@@ -605,7 +606,7 @@
     margin: 0;
   }
 }
-@media (min-width: 560px) {
+@media (min-width: 561px) {
   #es-rc #es-rc-content .es-section_routine_podium {
     list-style-type: none;
     counter-reset: es-counter 0;
@@ -625,18 +626,37 @@
     font-weight: 500;
     font-family: "Poppins", "League Spartan", system-ui, sans-serif;
   }
+  #es-rc #es-rc-content .es-section_routine_podium_element:nth-of-type(1) div:last-child {
+    transform: translateX(5%);
+  }
   #es-rc #es-rc-content .es-section_routine_podium_element:nth-of-type(1)::before {
     top: -7%;
   }
+  #es-rc #es-rc-content .es-section_routine_podium_element:nth-of-type(1)::after {
+    content: "";
+    background-image: url("../images/bubble.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: -1;
+    top: 15%;
+    left: 47%;
+    height: 75%;
+    width: 75%;
+  }
   #es-rc #es-rc-content .es-section_routine_podium_element:nth-of-type(2)::before {
-    top: 10%;
+    top: 6.5%;
     right: 12%;
   }
+  #es-rc #es-rc-content .es-section_routine_podium_element:nth-of-type(3) div:last-child {
+    transform: translateX(-5%);
+  }
   #es-rc #es-rc-content .es-section_routine_podium_element:nth-of-type(3)::before {
-    top: 22%;
+    top: 23%;
+    right: -16%;
   }
 }
-@media screen and (max-width: 559px) {
+@media screen and (max-width: 560px) {
   #es-rc #es-rc-content .es-section_routine_podium {
     flex-direction: column;
     gap: 3rem;
@@ -669,7 +689,7 @@
     height: 60%;
   }
 }
-@media screen and (max-width: 559px) and (max-width: 320px) {
+@media screen and (max-width: 560px) and (max-width: 320px) {
   #es-rc #es-rc-content .es-section_routine_podium_element {
     flex-direction: column-reverse;
     padding-inline: 1rem;
