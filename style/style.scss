@@ -13,7 +13,7 @@
 
 @mixin text {
   font-family: "League Spartan", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.25;
   text-align: center;
@@ -22,14 +22,14 @@
 
 @mixin heading {
   font-weight: 600;
-  font-size: 1.4rem;
+  font-size: 24px;
   text-transform: uppercase;
-  margin: 1rem;
+  margin: 16px;
 }
 
 @mixin sans {
   font-family: system-ui, sans-serif;
-  font-size: 0.7rem;
+  font-size: 14px;
 }
 
 @mixin pseudo-border {
@@ -68,7 +68,7 @@ $desktop: 860px;
   cursor: default;
   @include flex-center;
   flex-direction: column;
-  gap: 3rem;
+  gap: 48px;
 
   @include text;
 
@@ -83,7 +83,7 @@ $desktop: 860px;
   h2 {
     @include text;
     @include heading;
-    margin: 2rem;
+    margin: 32px;
     @media screen and (max-width: $narrow) {
       margin-inline: 0;
     }
@@ -91,7 +91,7 @@ $desktop: 860px;
 
   p {
     @include text;
-    margin: 1rem;
+    margin: 16px;
   }
 
   img {
@@ -138,7 +138,7 @@ $desktop: 860px;
           }
           > p {
             color: black;
-            font-size: 1.25rem;
+            font-size: 20px;
             width: 90%;
           }
         }
@@ -170,7 +170,7 @@ $desktop: 860px;
         z-index: 100;
         &.es-heading-1 {
           color: white;
-          font-size: 1.6rem;
+          font-size: 28px;
           text-align: left;
           width: 33.333%;
           span.es-bold {
@@ -184,15 +184,15 @@ $desktop: 860px;
           @include head2;
           width: 100%;
           max-width: 245px;
-          font-size: 0.8rem;
+          font-size: 18px;
           font-weight: 400;
           line-height: 1;
           span.es-mineral {
             line-height: 1.5;
-            font-size: 1.7rem;
+            font-size: 30px;
           }
           @media screen and (max-width: $narrow) {
-            font-size: 0.9rem;
+            font-size: 16px;
             > span:nth-of-type(2) {
               display: none;
             }
@@ -202,22 +202,22 @@ $desktop: 860px;
     }
 
     &_descr {
-      padding: 0.5rem 0 0.9rem 0;
-      font-size: 1.1rem;
+      padding: 8px 0 15px 0;
+      font-size: 18px;
       position: relative;
       &::before {
         @include pseudo-border;
         top: 0;
-        left: 0.5rem;
+        left: 8px;
       }
       &::after {
         @include pseudo-border;
         bottom: 0;
-        right: 0.5rem;
+        right: 8px;
         rotate: 180deg;
       }
       h2 {
-        font-size: 1.5rem;
+        font-size: 24px;
         font-weight: 400;
       }
     }
@@ -251,7 +251,7 @@ $desktop: 860px;
           font-weight: 500;
           text-align: left;
           sup {
-            font-size: 0.75rem;
+            font-size: 12px;
             font-weight: 400;
             user-select: none;
           }
@@ -259,7 +259,7 @@ $desktop: 860px;
             &.es-span_number {
               margin-block-end: 0;
               text-transform: none;
-              font-size: 2.3rem;
+              font-size: 40px;
               line-height: 1;
               color: #00b3d3;
             }
@@ -279,7 +279,7 @@ $desktop: 860px;
       &_grid {
         display: grid;
         grid-auto-rows: 360px;
-        gap: 1rem;
+        gap: 16px;
         justify-content: center;
         align-content: center;
         justify-items: center;
@@ -295,7 +295,7 @@ $desktop: 860px;
         }
         @media screen and (max-width: $narrow) {
           grid-template-columns: repeat(1, 1fr);
-          margin-top: 5rem;
+          margin-top: 80px;
         }
         &_element {
           max-width: 180px;
@@ -316,7 +316,7 @@ $desktop: 860px;
               @include center;
               z-index: 5;
               @include heading;
-              font-size: 0.9rem;
+              font-size: 16px;
               line-height: 1;
               margin: 0;
               background-color: hsl(0, 0%, 100%, 0.65);
@@ -328,7 +328,7 @@ $desktop: 860px;
           }
           > p {
             font-weight: 400;
-            font-size: 0.9rem;
+            font-size: 17px;
             line-height: normal;
           }
         }
@@ -390,7 +390,7 @@ $desktop: 860px;
           }
           @media screen and (max-width: $mobile) {
             grid-template-columns: 1fr;
-            gap: 1rem;
+            gap: 16px;
           }
           &_element {
             display: flex;
@@ -414,7 +414,7 @@ $desktop: 860px;
             }
             @media screen and (max-width: $mobile) {
               flex-direction: row;
-              gap: 1rem;
+              gap: 16px;
               width: 50%;
               max-width: 400px;
               text-align: left;
@@ -442,24 +442,24 @@ $desktop: 860px;
         right: 0;
         transform: translateY(-50%);
         background: linear-gradient(94deg, #1e5c8c 0%, #2291d1 100%);
-        padding: 1rem 3rem;
+        padding: 16px 48px;
         > * {
           text-align: left;
           margin-inline: 0;
           color: white;
         }
         h2 {
-          margin-block: 1rem;
+          margin-block: 16px;
         }
         @media screen and (min-width: $desktop) {
           transform: translate(-15%, -50%);
         }
       }
       img {
-        margin: 3rem;
+        margin: 48px;
       }
       @media screen and (max-width: $tablet) {
-        margin-top: 3rem;
+        margin-top: 48px;
         display: grid;
         place-items: center;
         &_container,
@@ -487,8 +487,8 @@ $desktop: 860px;
           h3,
           h4 {
             @include heading;
-            font-size: 1rem;
-            margin: 0.5rem;
+            font-size: 16px;
+            margin: 8px;
           }
           .es-podium_fleximg {
             z-index: 0;
@@ -514,8 +514,8 @@ $desktop: 860px;
           .es-podium-link {
             background-color: #1f6195;
             max-width: 100px;
-            margin: auto 2rem;
-            padding: 0.5rem 1.25rem;
+            margin: auto 32px;
+            padding: 8px 20px;
             &:hover {
               background-color: #3988c4;
             }
@@ -590,7 +590,7 @@ $desktop: 860px;
               right: -20%;
               z-index: -1;
               color: #ddd;
-              font-size: 12rem;
+              font-size: 202px;
               font-weight: 500;
               font-family: "Poppins", "League Spartan", system-ui, sans-serif;
             }
@@ -635,7 +635,7 @@ $desktop: 860px;
       @media screen and (max-width: $mobile) {
         &_podium {
           flex-direction: column;
-          gap: 3rem;
+          gap: 48px;
           &_element {
             display: flex;
             div {
@@ -654,7 +654,7 @@ $desktop: 860px;
             }
             .es-podium-link {
               text-align: center;
-              margin: 1rem;
+              margin: 16px;
             }
             &:nth-of-type(2) {
               > .es-podium_fleximg > img {
@@ -664,7 +664,7 @@ $desktop: 860px;
             }
             @media screen and (max-width: $narrow) {
               flex-direction: column-reverse;
-              padding-inline: 1rem;
+              padding-inline: 16px;
               &:nth-of-type(2) {
                 flex-direction: column-reverse;
               }

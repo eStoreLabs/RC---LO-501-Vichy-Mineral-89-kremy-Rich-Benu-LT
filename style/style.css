@@ -9,9 +9,9 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 3rem;
+  gap: 48px;
   font-family: "League Spartan", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.25;
   text-align: center;
@@ -24,16 +24,16 @@
 }
 #es-rc #es-rc-content h2 {
   font-family: "League Spartan", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.25;
   text-align: center;
   color: inherit;
   font-weight: 600;
-  font-size: 1.4rem;
+  font-size: 24px;
   text-transform: uppercase;
-  margin: 1rem;
-  margin: 2rem;
+  margin: 16px;
+  margin: 32px;
 }
 @media screen and (max-width: 320px) {
   #es-rc #es-rc-content h2 {
@@ -42,16 +42,18 @@
 }
 #es-rc #es-rc-content p {
   font-family: "League Spartan", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.25;
   text-align: center;
   color: inherit;
-  margin: 1rem;
+  margin: 16px;
 }
 #es-rc #es-rc-content img {
   display: block;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 #es-rc #es-rc-content a {
   cursor: pointer;
@@ -87,7 +89,7 @@
   }
   #es-rc #es-rc-content .es-section_head > div:first-of-type > p {
     color: black;
-    font-size: 1.25rem;
+    font-size: 20px;
     width: 90%;
   }
 }
@@ -121,15 +123,15 @@
 }
 #es-rc #es-rc-content .es-section_head p {
   font-family: "League Spartan", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.25;
   text-align: center;
   color: inherit;
   font-weight: 600;
-  font-size: 1.4rem;
+  font-size: 24px;
   text-transform: uppercase;
-  margin: 1rem;
+  margin: 16px;
   position: absolute;
   bottom: 0;
   font-weight: 400;
@@ -137,7 +139,7 @@
 }
 #es-rc #es-rc-content .es-section_head p.es-heading-1 {
   color: white;
-  font-size: 1.6rem;
+  font-size: 28px;
   text-align: left;
   width: 33.333%;
 }
@@ -155,42 +157,42 @@
   transform: translateX(-50%);
   width: 100%;
   max-width: 245px;
-  font-size: 0.8rem;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1;
 }
 #es-rc #es-rc-content .es-section_head p.es-heading-2 span.es-mineral {
   line-height: 1.5;
-  font-size: 1.7rem;
+  font-size: 30px;
 }
 @media screen and (max-width: 320px) {
   #es-rc #es-rc-content .es-section_head p.es-heading-2 {
-    font-size: 0.9rem;
+    font-size: 16px;
   }
   #es-rc #es-rc-content .es-section_head p.es-heading-2 > span:nth-of-type(2) {
     display: none;
   }
 }
 #es-rc #es-rc-content .es-section_descr {
-  padding: 0.5rem 0 0.9rem 0;
-  font-size: 1.1rem;
+  padding: 8px 0 15px 0;
+  font-size: 18px;
   position: relative;
 }
 #es-rc #es-rc-content .es-section_descr::before {
   content: url("../images/border.png");
   position: absolute;
   top: 0;
-  left: 0.5rem;
+  left: 8px;
 }
 #es-rc #es-rc-content .es-section_descr::after {
   content: url("../images/border.png");
   position: absolute;
   bottom: 0;
-  right: 0.5rem;
+  right: 8px;
   rotate: 180deg;
 }
 #es-rc #es-rc-content .es-section_descr h2 {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 400;
 }
 #es-rc #es-rc-content .es-section_numbers {
@@ -224,27 +226,30 @@
 }
 #es-rc #es-rc-content .es-section_numbers_headings p {
   font-family: "League Spartan", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.25;
   text-align: center;
   color: inherit;
   font-weight: 600;
-  font-size: 1.4rem;
+  font-size: 24px;
   text-transform: uppercase;
-  margin: 1rem;
+  margin: 16px;
   font-weight: 500;
   text-align: left;
 }
 #es-rc #es-rc-content .es-section_numbers_headings p sup {
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 400;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 #es-rc #es-rc-content .es-section_numbers_headings p span.es-span_number {
-  margin-block-end: 0;
+  -webkit-margin-after: 0;
+          margin-block-end: 0;
   text-transform: none;
-  font-size: 2.3rem;
+  font-size: 40px;
   line-height: 1;
   color: #00b3d3;
 }
@@ -260,7 +265,7 @@
 #es-rc #es-rc-content .es-section_squares_grid {
   display: grid;
   grid-auto-rows: 360px;
-  gap: 1rem;
+  gap: 16px;
   justify-content: center;
   align-content: center;
   justify-items: center;
@@ -282,7 +287,7 @@
 @media screen and (max-width: 320px) {
   #es-rc #es-rc-content .es-section_squares_grid {
     grid-template-columns: repeat(1, 1fr);
-    margin-top: 5rem;
+    margin-top: 80px;
   }
 }
 #es-rc #es-rc-content .es-section_squares_grid_element {
@@ -309,10 +314,10 @@
   transform: translate(-50%, -50%);
   z-index: 5;
   font-weight: 600;
-  font-size: 1.4rem;
+  font-size: 24px;
   text-transform: uppercase;
-  margin: 1rem;
-  font-size: 0.9rem;
+  margin: 16px;
+  font-size: 16px;
   line-height: 1;
   margin: 0;
   background-color: hsla(0, 0%, 100%, 0.65);
@@ -323,7 +328,7 @@
 }
 #es-rc #es-rc-content .es-section_squares_grid_element > p {
   font-weight: 400;
-  font-size: 0.9rem;
+  font-size: 17px;
   line-height: normal;
 }
 #es-rc #es-rc-content .es-section_icons {
@@ -395,7 +400,7 @@
 @media screen and (max-width: 560px) {
   #es-rc #es-rc-content .es-section_icons_container_grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 16px;
   }
 }
 #es-rc #es-rc-content .es-section_icons_container_grid_element {
@@ -424,7 +429,7 @@
 @media screen and (max-width: 560px) {
   #es-rc #es-rc-content .es-section_icons_container_grid_element {
     flex-direction: row;
-    gap: 1rem;
+    gap: 16px;
     width: 50%;
     max-width: 400px;
     text-align: left;
@@ -453,7 +458,7 @@
   right: 0;
   transform: translateY(-50%);
   background: linear-gradient(94deg, #1e5c8c 0%, #2291d1 100%);
-  padding: 1rem 3rem;
+  padding: 16px 48px;
 }
 #es-rc #es-rc-content .es-section_usage_container > * {
   text-align: left;
@@ -461,7 +466,7 @@
   color: white;
 }
 #es-rc #es-rc-content .es-section_usage_container h2 {
-  margin-block: 1rem;
+  margin-block: 16px;
 }
 @media screen and (min-width: 860px) {
   #es-rc #es-rc-content .es-section_usage_container {
@@ -469,11 +474,11 @@
   }
 }
 #es-rc #es-rc-content .es-section_usage img {
-  margin: 3rem;
+  margin: 48px;
 }
 @media screen and (max-width: 670px) {
   #es-rc #es-rc-content .es-section_usage {
-    margin-top: 3rem;
+    margin-top: 48px;
     display: grid;
     place-items: center;
   }
@@ -503,11 +508,11 @@
 #es-rc #es-rc-content .es-section_routine_podium_element h3,
 #es-rc #es-rc-content .es-section_routine_podium_element h4 {
   font-weight: 600;
-  font-size: 1.4rem;
+  font-size: 24px;
   text-transform: uppercase;
-  margin: 1rem;
-  font-size: 1rem;
-  margin: 0.5rem;
+  margin: 16px;
+  font-size: 16px;
+  margin: 8px;
 }
 #es-rc #es-rc-content .es-section_routine_podium_element .es-podium_fleximg {
   z-index: 0;
@@ -515,7 +520,8 @@
 #es-rc #es-rc-content .es-section_routine_podium_element .es-podium_fleximg img {
   transition: filter ease-out 0.2s;
   max-width: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 #es-rc #es-rc-content .es-section_routine_podium_element .es-podium_fleximg img:hover {
   filter: brightness(1.1);
@@ -528,27 +534,27 @@
 }
 #es-rc #es-rc-content .es-section_routine_podium_element p {
   font-family: "League Spartan", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.25;
   text-align: center;
   color: inherit;
   font-family: system-ui, sans-serif;
-  font-size: 0.7rem;
+  font-size: 14px;
 }
 #es-rc #es-rc-content .es-section_routine_podium_element .es-podium-link {
   background-color: #1f6195;
   max-width: 100px;
-  margin: auto 2rem;
-  padding: 0.5rem 1.25rem;
+  margin: auto 32px;
+  padding: 8px 20px;
   font-family: "League Spartan", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.25;
   text-align: center;
   color: inherit;
   font-family: system-ui, sans-serif;
-  font-size: 0.7rem;
+  font-size: 14px;
   text-transform: uppercase;
   text-decoration: none;
   color: white;
@@ -622,7 +628,7 @@
     right: -20%;
     z-index: -1;
     color: #ddd;
-    font-size: 12rem;
+    font-size: 202px;
     font-weight: 500;
     font-family: "Poppins", "League Spartan", system-ui, sans-serif;
   }
@@ -659,7 +665,7 @@
 @media screen and (max-width: 560px) {
   #es-rc #es-rc-content .es-section_routine_podium {
     flex-direction: column;
-    gap: 3rem;
+    gap: 48px;
   }
   #es-rc #es-rc-content .es-section_routine_podium_element {
     display: flex;
@@ -680,7 +686,7 @@
   }
   #es-rc #es-rc-content .es-section_routine_podium_element .es-podium-link {
     text-align: center;
-    margin: 1rem;
+    margin: 16px;
   }
   #es-rc #es-rc-content .es-section_routine_podium_element:nth-of-type(2) {
     flex-direction: row-reverse;
@@ -692,7 +698,7 @@
 @media screen and (max-width: 560px) and (max-width: 320px) {
   #es-rc #es-rc-content .es-section_routine_podium_element {
     flex-direction: column-reverse;
-    padding-inline: 1rem;
+    padding-inline: 16px;
   }
   #es-rc #es-rc-content .es-section_routine_podium_element:nth-of-type(2) {
     flex-direction: column-reverse;
@@ -700,13 +706,11 @@
 }
 #es-rc #es-rc-content p.footer {
   font-family: "League Spartan", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.25;
   text-align: center;
   color: inherit;
   font-family: system-ui, sans-serif;
-  font-size: 0.7rem;
-}
-
-/*# sourceMappingURL=style.css.map */
+  font-size: 14px;
+}/*# sourceMappingURL=style.css.map */
