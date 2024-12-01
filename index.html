@@ -1,193 +1,1173 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-      html,
-      body,
-      div {
-        margin: 0;
+<html lang="lt">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    /*Futura PT Demi  */
+    @font-face {
+      font-family: 'FuturaPT';
+      src: url("assets/fonts/FuturaPTDemi.otf");
+      font-weight: 700;
+      font-style: normal;
+    }
+
+
+    /*Futura PT Medium  */
+    @font-face {
+      font-family: 'FuturaPT';
+      src: url("assets/fonts/FuturaPTMedium.otf");
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    /*Futura PT Book  */
+    @font-face {
+      font-family: 'FuturaPT';
+      src: url("assets/fonts/FuturaPTBook.otf");
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    html,
+    body,
+    div {
+      margin: 0;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      height: 100dvh;
+    }
+
+    #es-rc #es-rc-content {
+      border: 0;
+      padding: 0;
+      max-width: 648px;
+      overflow: hidden;
+      cursor: default;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 48px;
+      font-family: "FuturaPT", sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.25;
+      text-align: center;
+      color: inherit;
+    }
+
+    #es-rc #es-rc-content * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #es-rc #es-rc-content h2 {
+      font-family: "FuturaPT", sans-serif;
+      font-weight: 400;
+      line-height: 1.25;
+      text-align: center;
+      color: inherit;
+      font-weight: 600;
+      font-size: 28px;
+      text-transform: uppercase;
+      margin: 16px;
+      margin: 32px;
+    }
+
+    @media screen and (max-width: 320px) {
+      #es-rc #es-rc-content h2 {
+        margin-inline: 0;
       }
-      body {
+    }
+
+    @media screen and (min-width: 1200px) {
+      #es-rc #es-rc-content {
+        max-width: 888px;
+      }
+
+      #es-rc #es-rc-content h2 {
+        margin: 32px;
+      }
+    }
+
+    #es-rc #es-rc-content p {
+      font-family: "FuturaPT", sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.25;
+      text-align: center;
+      color: inherit;
+      margin: 16px;
+    }
+
+    #es-rc #es-rc-content img {
+      display: block;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    #es-rc #es-rc-content a {
+      cursor: pointer;
+    }
+
+    #es-rc #es-rc-content span.semibold {
+      font-weight: 600;
+    }
+
+    #es-rc #es-rc-content>div {
+      width: 100%;
+    }
+
+    #es-rc #es-rc-content .es-section_head {
+      display: flex;
+      align-items: center;
+      flex-direction: column-reverse;
+    }
+
+
+    @media screen and (min-width: 1200px) {
+      #es-rc #es-rc-content .es-section_head {
+        flex-direction: row;
+        padding: 0 35px;
+      }
+    }
+
+    #es-rc #es-rc-content .es-section_head>div {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1/1;
+    }
+
+    #es-rc #es-rc-content .es-section_head>div:nth-of-type(2)>img:not(.es-header-absolute) {
+      width: 80%;
+    }
+
+    @media screen and (max-width: 500px) {
+      #es-rc #es-rc-content .es-section_head>div:first-of-type>img {
+        position: static;
+        transform: translate(0%, 0%);
+      }
+
+      #es-rc #es-rc-content .es-section_head>div:first-of-type>p {
+        color: black;
+        font-size: 20px;
+        width: 90%;
+      }
+    }
+
+    #es-rc #es-rc-content .es-section_head img.es-vichy-logo {
+      margin: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+      top: 10px;
+      width: 50%;
+      max-width: 220px;
+      z-index: 1;
+    }
+
+    #es-rc #es-rc-content .es-section_head img.es-header-mineral {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 320px;
+    }
+
+    #es-rc #es-rc-content .es-section_head>div>img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+
+    @media screen and (min-width: 480px) and (max-width: 1199px) {
+      #es-rc #es-rc-content .es-section_head img.es-header-mineral {
+        top: 40%;
+      }
+    }
+
+    @media screen and (max-width: 300px) {
+      #es-rc #es-rc-content .es-section_head img.es-header-mineral {
+        max-width: 280px;
+      }
+    }
+
+    #es-rc #es-rc-content .es-section_head p {
+      font-family: "FuturaPT", sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.25;
+      text-align: center;
+      color: inherit;
+      font-weight: 600;
+      font-size: 24px;
+      text-transform: uppercase;
+      margin: 16px;
+      position: absolute;
+      bottom: 0;
+      font-weight: 400;
+      z-index: 100;
+    }
+
+    #es-rc #es-rc-content .es-section_head p.es-heading-1 {
+      color: white;
+      font-size: 30px;
+      text-align: left;
+      width: 48%;
+    }
+
+    #es-rc #es-rc-content .es-section_head p.es-heading-1.es-bold {
+      font-weight: 700;
+    }
+
+    @media screen and (max-width: 500px) {
+      #es-rc #es-rc-content .es-section_head p.es-heading-1 {
+        position: static;
+      }
+    }
+
+    #es-rc #es-rc-content .es-section_head p.es-heading-2 {
+      margin: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 350px;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.3;
+    }
+
+    #es-rc #es-rc-content .es-section_head p.es-heading-2 span.es-mineral {
+      line-height: 1.5;
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+    @media screen and (max-width: 320px) {
+      #es-rc #es-rc-content .es-section_head p.es-heading-2 {
+        font-size: 16px;
+      }
+
+      #es-rc #es-rc-content .es-section_head p.es-heading-2>span:nth-of-type(2) {
+        display: none;
+      }
+    }
+
+    @media screen and (min-width: 480px) and (max-width: 1199px) {
+      #es-rc #es-rc-content .es-section_head p.es-heading-2 {
+        top: 70%;
+      }
+    }
+
+    #es-rc #es-rc-content .es-section_descr {
+      padding: 8px 0 15px 0;
+      font-size: 18px;
+      position: relative;
+    }
+
+    #es-rc #es-rc-content .es-section_descr::before {
+      content: url("assets/images/border.png");
+      position: absolute;
+      top: 0;
+      left: 8px;
+    }
+
+    #es-rc #es-rc-content .es-section_descr::after {
+      content: url("assets/images/border.png");
+      position: absolute;
+      bottom: 0;
+      right: 8px;
+      rotate: 180deg;
+    }
+
+    #es-rc #es-rc-content .es-section_descr h2 {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    @media screen and (max-width: 400px) {
+
+      #es-rc #es-rc-content .es-section_descr::before,
+      #es-rc #es-rc-content .es-section_descr::after {
+        display: none;
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+
+      #es-rc #es-rc-content .es-section_descr::before,
+      #es-rc #es-rc-content .es-section_descr::after {
+        padding: 0 28px;
+      }
+
+      #es-rc #es-rc-content .es-section_descr h2,
+      #es-rc #es-rc-content .es-section_descr p {
+        padding: 0 49px;
+      }
+
+      #es-rc #es-rc-content .es-section_descr p {
+        font-size: 23px;
+      }
+    }
+
+    #es-rc #es-rc-content .es-section_numbers {
+      position: relative;
+      min-height: 600px;
+    }
+
+    #es-rc #es-rc-content .es-section_numbers::after {
+      position: absolute;
+      bottom: -100px;
+      right: 0;
+      z-index: -1;
+      content: url("assets/images/cream_birdseye.png");
+      transition: all ease-in-out 0.5s;
+      filter: opacity(0.25) blur(1px);
+    }
+
+    @media screen and (min-width: 1200px) {
+      #es-rc #es-rc-content .es-section_numbers {
+        margin-bottom: 40px;
+        min-height: 438px;
+      }
+
+      #es-rc #es-rc-content .es-section_numbers h2 {
+        font-size: 32px;
+        font-weight: 600;
+      }
+
+      #es-rc #es-rc-content .es-section_numbers::after {
+        filter: none;
+      }
+    }
+
+    #es-rc #es-rc-content .es-section_numbers_headings {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-35%);
+      max-width: 100%
+    }
+
+    #es-rc #es-rc-content .es-section_numbers_headings p {
+      font-family: "FuturaPT", sans-serif;
+      font-weight: 400;
+      line-height: 1.25;
+      text-align: center;
+      color: inherit;
+      font-weight: 600;
+      font-size: 28px;
+      text-transform: uppercase;
+      margin: 16px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    #es-rc #es-rc-content .es-section_numbers_headings p sup {
+      font-size: 12px;
+      font-weight: 400;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    #es-rc #es-rc-content .es-section_numbers_headings p span.es-span_number {
+      -webkit-margin-after: 0;
+      margin-block-end: 0;
+      text-transform: none;
+      font-size: 35px;
+      line-height: 1;
+      color: #00b3d3;
+      font-weight: 700;
+    }
+
+    #es-rc #es-rc-content .es-section_numbers_headings p span.es-span_thin {
+      font-weight: 400;
+    }
+
+    @media screen and (max-width: 560px) {
+      #es-rc #es-rc-content .es-section_numbers_headings {
+        left: 0;
+        transform: translateY(-25%);
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      #es-rc #es-rc-content .es-section_numbers_headings {
+        max-width: 566px;
+        left: 10%;
+      }
+
+      #es-rc #es-rc-content .es-section_numbers_headings p {
+        text-align: left;
+        font-size: 29px;
+      }
+
+      #es-rc #es-rc-content .es-section_numbers_headings p span.es-span_number {
+        font-size: 41px;
+      }
+    }
+
+    #es-rc #es-rc-content .es-section_squares_grid {
+      display: grid;
+      gap: 16px;
+      justify-content: center;
+      align-content: center;
+      justify-items: center;
+
+    }
+
+    @media screen and (min-width: 560px) {
+      #es-rc #es-rc-content .es-section_squares_grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+
+    @media screen and (min-width: 1200px) {
+      #es-rc #es-rc-content .es-section_squares_grid {
+        padding: 0 35px;
+        margin-top: 50px;
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    #es-rc #es-rc-content .es-section_squares_grid_element {
+      max-width: 190px;
+    }
+
+    #es-rc #es-rc-content .es-section_squares_grid_element_img {
+      position: relative;
+      transition: all ease-in-out 0.25s;
+    }
+
+    #es-rc #es-rc-content .es-section_squares_grid_element_img:hover {
+      transform: scale(1.1);
+    }
+
+    #es-rc #es-rc-content .es-section_squares_grid_element_img:hover img {
+      filter: brightness(1.1);
+    }
+
+    #es-rc #es-rc-content .es-section_squares_grid_element_img>img {
+      transition: all ease-in-out 0.25s;
+      width: 100%;
+    }
+
+    #es-rc #es-rc-content .es-section_squares_grid_element_img_overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 5;
+      font-weight: 600;
+      font-size: 24px;
+      text-transform: uppercase;
+      margin: 16px;
+      font-size: 16px;
+      line-height: 1;
+      margin: 0;
+      background-color: #ffffff;
+      min-height: 52px;
+      width: 86%;
+      display: grid;
+      place-items: center;
+    }
+
+    #es-rc #es-rc-content .es-section_squares_grid_element>p {
+      font-weight: 400;
+      font-size: 17px;
+      line-height: normal;
+      margin-left: 9px;
+      margin-right: 9px;
+    }
+
+    #es-rc #es-rc-content .es-section_icons {
+      position: relative;
+      height: 360px;
+    }
+
+    #es-rc #es-rc-content .es-section_icons::before {
+      content: url("assets/images/background-smear.png");
+      position: absolute;
+      top: -15%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
+      width: 100%;
+    }
+
+    @media screen and (min-width: 860px) {
+      #es-rc #es-rc-content .es-section_icons::before {
+        transform: translateX(-60%);
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      #es-rc #es-rc-content .es-section_squares_grid_element>p {
+        font-size: 14px;
+      }
+    }
+
+    #es-rc #es-rc-content .es-section_icons::after {
+      display: none;
+    }
+
+    @media screen and (min-width: 1200px) {
+      #es-rc #es-rc-content .es-section_icons::after {
+        content: url("assets/images/cream_top.png");
+        position: absolute;
+        bottom: -35%;
+        right: 0;
+        z-index: -1;
+        transition: all ease-in-out 0.25s;
+        display: block;
+      }
+    }
+
+    #es-rc #es-rc-content .es-section_icons_container {
+      position: relative;
+      left: 5%;
+      width: 100%;
+      display: grid;
+      justify-items: center;
+    }
+
+    @media screen and (max-width: 670px) {
+      #es-rc #es-rc-content .es-section_icons_container {
+        width: 100%;
+        max-width: 100%;
+        position: static;
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      #es-rc #es-rc-content .es-section_icons_container {
+        width: 69%;
+        max-width: 486px;
+      }
+
+      #es-rc #es-rc-content .es-section_icons_container h2 {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    #es-rc #es-rc-content .es-section_icons_container_grid {
+      position: relative;
+      width: 100%;
+      display: grid;
+      grid-auto-flow: row;
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
+      align-content: center;
+    }
+
+    @media screen and (max-width: 670px) {
+      #es-rc #es-rc-content .es-section_icons_container_grid {
+        top: 0;
+        width: 100%;
+      }
+    }
+
+    @media screen and (max-width: 560px) {
+      #es-rc #es-rc-content .es-section_icons_container_grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+
+    #es-rc #es-rc-content .es-section_icons_container_grid_element {
+      display: flex;
+      flex-direction: column;
+      max-width: 120px;
+      align-items: center;
+      cursor: default;
+      transition: all ease-in-out 0.25s;
+    }
+
+    #es-rc #es-rc-content .es-section_icons_container_grid_element:hover {
+      transform: scale(1.1);
+    }
+
+    #es-rc #es-rc-content .es-section_icons_container_grid_element p {
+      font-size: 14px;
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 35px;
+    }
+
+
+    #es-rc #es-rc-content .es-section_icons_container_grid_element_icon {
+      display: grid;
+      place-items: center;
+      width: 100%;
+      height: 64px;
+    }
+
+    @media screen and (max-width: 560px) {
+      #es-rc #es-rc-content .es-section_icons_container_grid_element_icon {
+        width: 64px;
+        min-width: 64px;
+      }
+    }
+
+    @media screen and (max-width: 560px) {
+      #es-rc #es-rc-content .es-section_icons_container_grid_element {
+        flex-direction: row;
+        gap: 16px;
+        width: 50%;
+        max-width: 400px;
+        text-align: left;
+      }
+    }
+
+    @media screen and (max-width: 320px) {
+      #es-rc #es-rc-content .es-section_icons_container_grid_element {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      #es-rc #es-rc-content .es-section_icons_container_grid_element {
+        max-width: 145px;
+      }
+    }
+
+    @media screen and (max-width: 320px) {
+      #es-rc #es-rc-content .es-section_icons {
+        height: 500px;
+      }
+
+      #es-rc #es-rc-content .es-section_icons_container_grid {
+        top: 0;
+      }
+    }
+
+    #es-rc #es-rc-content .es-section_usage {
+      position: relative;
+      margin-top: 48px;
+      display: grid;
+      place-items: center;
+    }
+
+    #es-rc #es-rc-content .es-section_usage_container {
+      background: #1E5D8E;
+      padding: 25px 25px;
+      line-height: 1;
+      position: relative;
+      margin: 0;
+      width: 100%;
+      max-width: 550px;
+    }
+
+    #es-rc #es-rc-content .es-section_usage_container>* {
+      text-align: left;
+      color: white;
+    }
+
+    #es-rc #es-rc-content .es-section_usage_container h2 {
+      margin: 16px 5px;
+      text-align: center;
+    }
+
+    #es-rc #es-rc-content .es-section_usage_container p {
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    @media screen and (min-width: 1200px) {
+      #es-rc #es-rc-content .es-section_usage {
+        display: block;
+        place-items: start;
+      }
+
+      #es-rc #es-rc-content .es-section_usage_container {
+        transform: translate(3%, -50%);
+        position: absolute;
+        top: 50%;
+        right: 0;
+        padding: 25px 80px;
+      }
+
+      #es-rc #es-rc-content .es-section_usage img {
+        margin: 48px;
+      }
+    }
+
+    @media screen and (max-width: 670px) {
+
+      #es-rc #es-rc-content .es-section_usage_container,
+      #es-rc #es-rc-content .es-section_usage img {
+        position: relative;
+        margin: 0;
+        width: 100%;
+        max-width: 550px;
+      }
+
+      #es-rc #es-rc-content .es-section_usage img {
+        max-width: 370px;
+      }
+    }
+
+    @media screen and (min-width: 1200px) {
+      #es-rc #es-rc-content .es-section_usage img {
+        margin-left: 10px;
+        margin-bottom: 0;
+      }
+
+    }
+
+    #es-rc #es-rc-content .es-section_routine {
+      display: grid;
+      justify-items: center;
+    }
+
+    #es-rc #es-rc-content .es-section_routine_podium {
+      display: flex;
+      flex-direction: row;
+    }
+
+    #es-rc #es-rc-content .es-section_routine_podium_element {
+      display: flex;
+      width: 100%;
+    }
+
+    #es-rc #es-rc-content .es-section_routine_podium_element h3,
+    #es-rc #es-rc-content .es-section_routine_podium_element h4 {
+      font-weight: 600;
+      font-size: 24px;
+      text-transform: uppercase;
+      margin: 16px;
+      font-size: 16px;
+      margin: 8px;
+    }
+
+    #es-rc #es-rc-content .es-section_routine_podium_element .es-podium_fleximg {
+      z-index: 0;
+    }
+
+    #es-rc #es-rc-content .es-section_routine_podium_element .es-podium_fleximg img {
+      transition: filter ease-out 0.2s;
+      max-width: 100%;
+      -o-object-fit: contain;
+      object-fit: contain;
+    }
+
+    #es-rc #es-rc-content .es-section_routine_podium_element .es-podium_fleximg img:hover {
+      filter: brightness(1.1);
+    }
+
+    #es-rc #es-rc-content .es-section_routine_podium_element h3 {
+      font-weight: 700;
+      font-size: 28px;
+      margin: 0;
+    }
+
+    #es-rc #es-rc-content .es-section_routine_podium_element h4 {
+      font-weight: 600;
+      font-size: 25px;
+      margin: 0;
+    }
+
+    #es-rc #es-rc-content .es-section_routine_podium_element p {
+      font-family: "FuturaPT", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.25;
+      text-align: center;
+      color: inherit;
+      text-transform: uppercase;
+
+    }
+
+    #es-rc #es-rc-content .es-section_routine_podium_element .es-podium-link {
+      background-color: #1f6195;
+      max-width: 100px;
+      margin: auto 32px;
+      padding: 8px 20px;
+      font-family: "FuturaPT", sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.25;
+      text-align: center;
+      color: inherit;
+      font-size: 14px;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: white;
+      transition: background-color 0.1s ease-out;
+    }
+
+    #es-rc #es-rc-content .es-section_routine_podium_element .es-podium-link:hover {
+      background-color: #3988c4;
+    }
+
+    @media (min-width: 1200px) {
+      #es-rc #es-rc-content .es-section_routine_podium {
+        display: flex;
+        flex-direction: row;
+      }
+
+      #es-rc #es-rc-content .es-section_routine h2 {
+        margin-top: 0;
+      }
+
+      #es-rc #es-rc-content .es-section_routine_podium_element {
+        flex-direction: column-reverse;
+        max-width: 33.333%;
+      }
+
+      #es-rc #es-rc-content .es-section_routine_podium_element img {
+        margin-bottom: 40px;
+      }
+
+      #es-rc #es-rc-content .es-section_routine_podium_element div:first-of-type {
+        z-index: 1;
+        min-height: 225px;
+        position: relative;
+        max-width: 276px;
+      }
+
+      #es-rc #es-rc-content .es-section_routine_podium_element .es-podium_fleximg {
         display: grid;
         place-items: center;
-        height: 100dvh;
+        width: 100%;
+        height: 100%;
       }
-    </style>
-    <title>Vichy Krem</title>
-  </head>
-  <body>
-    <!-- Copy this div: -->
-    <div id="es-rc">
-      <div id="es-rc-content">
-        <link rel="stylesheet" href="style/style.css" />
-        <div class="es-section_head">
-          <div>
-            <img src="images/head1.png" aria-hidden="true" />
-            <p class="es-heading-1">
-              <span class="es-bold"> Długotrwale i&nbsp;intensywnie nawilża</span> odbudowując barierę hydrolipidową
-              skóry
-            </p>
-          </div>
-          <div>
-            <img src="images/head2.png" aria-hidden="true" />
-            <p class="es-heading-2">
-              <span class="es-mineral"> Mineral&nbsp;89</span>
-              <br />
-              <span>Krem nawilżająco-odbudowujący&nbsp;72h o&nbsp;lekkiej konsystencji dla&nbsp;skóry suchej</span>
-            </p>
-            <img src="images/logo.png" aria-hidden="true" class="es-vichy-logo es-header-absolute" />
-            <img src="images/mineral.png" aria-hidden="true" class="es-header-mineral es-header-absolute" />
-          </div>
-        </div>
-        <div class="es-section_descr">
-          <h2>
-            Czy wiesz, że&nbsp;suchość i&nbsp;podrażnienie skóry twarzy mogą&nbsp;być związane z&nbsp;<span
-              class="semibold"
-              >naruszoną barierą hydrolipidową?</span
-            >
-          </h2>
-          <p>
-            Narażona na&nbsp;czynniki zewnętrzne bariera skórna jest osłabiona, przez&nbsp;co zwiększa&nbsp;się
-            codzienna utrata wody, minerałów, lipidów, witamin i&nbsp;kwasu hialuronowego przez skórę. Krem Vichy
-            Mineral&nbsp;89 odbudowuje barierę hydrolipidową, przenikając w&nbsp;głąb skóry dla&nbsp;długotrwałego
-            i&nbsp;intensywnego nawilżenia.
+
+      #es-rc #es-rc-content .es-section_routine_podium_element .es-podium_fleximg img {
+        max-height: 512px;
+      }
+
+      #es-rc #es-rc-content .es-section_routine_podium_element:first-of-type .es-podium_fleximg {
+        align-self: center;
+      }
+
+      #es-rc #es-rc-content .es-section_routine_podium_element:first-of-type .es-podium_fleximg img {
+        width: 55%;
+      }
+
+      #es-rc #es-rc-content .es-section_routine_podium_element:nth-of-type(2) .es-podium_fleximg {
+        position: relative;
+      }
+
+      #es-rc #es-rc-content .es-section_routine_podium_element:nth-of-type(2) .es-podium_fleximg img {
+        position: absolute;
+        bottom: -30px;
+        transform: translateX(2%);
+        max-width: 100%;
+      }
+
+      #es-rc #es-rc-content .es-section_routine_podium_element:last-of-type .es-podium_fleximg {
+        align-self: center;
+      }
+
+      #es-rc #es-rc-content .es-section_routine_podium_element:last-of-type .es-podium_fleximg img {
+        width: 60%;
+      }
+
+      #es-rc #es-rc-content .es-section_routine_podium_element .es-podium-link {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 0;
+        margin-top: 50px;
+        font-size: 24px;
+        padding: 12px 55px;
+        text-align: center;
+        max-width: 180px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      #es-rc #es-rc-content .es-section_routine_podium {
+        list-style-type: none;
+        counter-reset: es-counter 0;
+      }
+
+      #es-rc #es-rc-content .es-section_routine_podium_element {
+        counter-increment: es-counter 1;
+        position: relative;
+      }
+
+      #es-rc #es-rc-content .es-section_routine_podium_element::before {
+        content: counter(es-counter);
+        position: absolute;
+        left: 50%;
+        right: -20%;
+        z-index: -1;
+        color: #B7B7B7;
+        font-size: 202px;
+        font-weight: 700;
+        font-family: "FuturaPT", sans-serif;
+      }
+
+      #es-rc #es-rc-content .es-section_routine_podium_element:nth-of-type(1) div:last-child {
+        transform: translateX(1%);
+      }
+
+      #es-rc #es-rc-content .es-section_routine_podium_element:nth-of-type(1)::before {
+        top: -11%;
+      }
+
+      #es-rc #es-rc-content .es-section_routine_podium_element:nth-of-type(2)::before {
+        top: -11%;
+        right: 12%;
+      }
+
+      #es-rc #es-rc-content .es-section_routine_podium_element:nth-of-type(3) div:last-child {
+        transform: translate(-2%, 10%);
+      }
+
+      #es-rc #es-rc-content .es-section_routine_podium_element:nth-of-type(3)::before {
+        top: -11%;
+        right: 9%;
+      }
+    }
+
+    @media screen and (max-width: 1199px) {
+      #es-rc #es-rc-content .es-section_routine_podium {
+        flex-direction: column;
+        gap: 48px;
+      }
+
+      #es-rc #es-rc-content .es-section_routine_podium_element {
+        display: flex;
+      }
+
+      #es-rc #es-rc-content .es-section_routine_podium_element div {
+        width: 100%;
+        /* max-height: 350px; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #es-rc #es-rc-content .es-section_routine_podium_element div>* {
+        margin: 0;
+      }
+
+      #es-rc #es-rc-content .es-section_routine_podium_element .es-podium_fleximg>img {
+        max-height: 100%;
+      }
+
+      #es-rc #es-rc-content .es-section_routine_podium_element .es-podium-link {
+        text-align: center;
+        margin: 16px;
+      }
+
+      #es-rc #es-rc-content .es-section_routine_podium_element:nth-of-type(2) {
+        flex-direction: row-reverse;
+      }
+
+      #es-rc #es-rc-content .es-section_routine_podium_element:nth-of-type(2)>.es-podium_fleximg>img {
+        height: 90%;
+      }
+    }
+
+    #es-rc #es-rc-content .es-section_routine_podium_element {
+      flex-direction: column-reverse;
+      padding-inline: 16px;
+    }
+
+    #es-rc #es-rc-content .es-section_routine_podium_element:nth-of-type(2) {
+      flex-direction: column-reverse;
+    }
+
+    #es-rc #es-rc-content p.footer {
+      font-family: "FuturaPT", sans-serif;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.25;
+      text-align: center;
+      color: inherit;
+      font-size: 14px;
+    }
+  </style>
+  <title>Vichy Mineral 89</title>
+</head>
+
+<body>
+  <div id="es-rc">
+    <div id="es-rc-content">
+      <div class="es-section_head">
+        <div>
+          <img src="./assets/images/head1.png" aria-hidden="true" />
+          <p class="es-heading-1 es-bold">
+            Ilgalaikis ir intensyvus DRĖKINAMASIS kremas, atkuriantis odos hidrolipidinį barjerą
           </p>
         </div>
-        <div class="es-section_numbers">
-          <h2>Skuteczność potwierdzona w&nbsp;badaniach klinicznych</h2>
-          <div class="es-section_numbers_headings">
-            <p><span class="es-span_number">72H</span> długotrwałe i&nbsp;intensywne nawilżenie<sup>1</sup></p>
+        <div>
+          <p class="es-heading-2">
+            <span class="es-mineral"> Mineral&nbsp;89</span>
+            <br />
+            <span>72 val. drėkinamasis ir atkuriamasis<br> lengvos tekstūros kremas sausai odai</span>
+          </p>
+          <img src="./assets/images/logo.png" aria-hidden="true" class="es-vichy-logo es-header-absolute" />
+          <img src="./assets/images/mineral.png" aria-hidden="true" class="es-header-mineral es-header-absolute" />
+        </div>
+      </div>
+      <div class="es-section_descr">
+        <h2>
+          Ar žinojote, kad sausa ir sudirgusi veido oda gali būti susijusi su pažeistu hidrolipidiniu barjeru?
+        </h2>
+        <p>
+          Veikiamas išorinių veiksnių, odos barjeras susilpnėja, todėl kasdien per odą prarandama daugiau vandens,
+          mineralų, lipidų, vitaminų ir hialurono rūgšties. Kremas „Vichy Mineral 89“ atkuria hidrolipidinį barjerą,
+          prasiskverbia giliai į odą ir užtikrina ilgalaikį bei intensyvų drėkinimą.
+        </p>
+      </div>
+      <div class="es-section_numbers">
+        <h2>Klinikiniais tyrimais patvirtintas veiksmingumas</h2>
+        <div class="es-section_numbers_headings">
+          <p><span class="es-span_number">72val.</span> ilgalaikis ir intensyvus drėkinimas<sup>1</sup></p>
+          <p>
+            <span class="es-span_number">8x</span> <span class="es-span_thin">kartus greičiau atkuriamas</span>
+            hidrolipidinis barjeras<sup>2</sup>
+          </p>
+          <p><span class="es-span_number">100%</span> moterų patinka „Vichy Mineral 89“ kremo konsistencija<sup>3</sup>
+          </p>
+        </div>
+      </div>
+      <div class="es-section_squares">
+        <h2>Veikliųjų medžiagų derinys</h2>
+        <div class="es-section_squares_grid">
+          <div class="es-section_squares_grid_element">
+            <div class="es-section_squares_grid_element_img">
+              <img src="./assets/images/square1.png" aria-hidden="true" />
+              <div class="es-section_squares_grid_element_img_overlay">Hialurono rūgštis</div>
+            </div>
             <p>
-              <span class="es-span_number">8x</span> szybsza regeneracja
-              <span class="es-span_thin">bariery hydrolipidowej</span><sup>2</sup>
+              Sulaiko vandenį epidermyje, saugo nuo vandens netekimo. Intensyviai drėkina ir suteikia odai elastingumo.
+            </p>
+          </div>
+          <div class="es-section_squares_grid_element">
+            <div class="es-section_squares_grid_element_img">
+              <img src="./assets/images/square2.png" aria-hidden="true" />
+              <div class="es-section_squares_grid_element_img_overlay">Vitaminas E + niacinamidas (B3)</div>
+            </div>
+            <p>
+              Vitaminas E padeda atkurti epidermio lipidinius sluoksnius, o niacinamidas turi raminamąjį ir
+              regeneruojamąjį poveikį, naudingą apsauginiam odos barjerui.
+            </p>
+          </div>
+          <div class="es-section_squares_grid_element">
+            <div class="es-section_squares_grid_element_img">
+              <img src="./assets/images/square3.png" aria-hidden="true" />
+              <div class="es-section_squares_grid_element_img_overlay">15 „Vichy“<br> mineralų</div>
+            </div>
+            <p>
+              Vichy vulkaniniame vandenyje esantys vertingi mineralai padeda stiprinti odą ir įgauti atsparumo aplinkos
+              veiksniams.
+            </p>
+          </div>
+          <div class="es-section_squares_grid_element">
+            <div class="es-section_squares_grid_element_img">
+              <img src="./assets/images/square4.png" aria-hidden="true" />
+              <div class="es-section_squares_grid_element_img_overlay">Skvalanas</div>
+            </div>
+            <p>
+              Kuria švelnų okliuzinį sluoksnį, padedantį saugoti odos drėgmę. Jis ramina, suteikia glotnumo, turi
+              regeneracinių savybių.
             </p>
           </div>
         </div>
-        <div class="es-section_squares">
-          <h2>Unikalne połączenie składników aktywnych</h2>
-          <div class="es-section_squares_grid">
-            <div class="es-section_squares_grid_element">
-              <div class="es-section_squares_grid_element_img">
-                <img src="images/square1.png" aria-hidden="true" />
-                <div class="es-section_squares_grid_element_img_overlay">Kwas hialuronowy</div>
-              </div>
-              <p>
-                Wiąże wodę w&nbsp;naskórku chroniąc przed jej utratą. Intensywnie nawilża i&nbsp;uelastycznia skórę.
-              </p>
-            </div>
-            <div class="es-section_squares_grid_element">
-              <div class="es-section_squares_grid_element_img">
-                <img src="images/square2.png" aria-hidden="true" />
-                <div class="es-section_squares_grid_element_img_overlay">Witamina&nbsp;E + Niacynamid&nbsp;(B3)</div>
-              </div>
-              <p>
-                Witamina&nbsp;E pomaga odbudować warstwy lipidowe naskórka, a&nbsp;Niacynamid działa kojąco
-                i&nbsp;regenerująco na&nbsp;barierę ochronną.
-              </p>
-            </div>
-            <div class="es-section_squares_grid_element">
-              <div class="es-section_squares_grid_element_img">
-                <img src="images/square3.png" aria-hidden="true" />
-                <div class="es-section_squares_grid_element_img_overlay">15&nbsp;minerałów Vichy</div>
-              </div>
-              <p>
-                Cenne minerały zawarte w&nbsp;wulkanicznej wodzie Vichy czynią skórę silniejszą przeciw działaniu
-                szkodliwych czynników zewnętrznych.
-              </p>
-            </div>
-            <div class="es-section_squares_grid_element">
-              <div class="es-section_squares_grid_element_img">
-                <img src="images/square4.png" aria-hidden="true" />
-                <div class="es-section_squares_grid_element_img_overlay">Skwalan<br />+&nbsp;inne lipidy</div>
-              </div>
-              <p>
-                Tworzy delikatną warstwę okluzyjną (film), która zapobiega nadmiernemu odparowywaniu wody. Przynosi
-                ukojenie, wygładza i&nbsp;regeneruje skórę.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="es-section_icons">
-          <div class="es-section_icons_container">
-            <h2>Gwarancja wysokiej tolerancji</h2>
-            <div class="es-section_icons_container_grid">
-              <div class="es-section_icons_container_grid_element">
-                <div class="es-section_icons_container_grid_element_icon">
-                  <img src="images/icon1.png" aria-hidden="true" />
-                </div>
-                Odpowiedni dla skóry wrażliwej
-              </div>
-              <div class="es-section_icons_container_grid_element">
-                <div class="es-section_icons_container_grid_element_icon">
-                  <img src="images/icon2.png" aria-hidden="true" />
-                </div>
-                Przebadany pod kontrolą dermatologiczną
-              </div>
-              <div class="es-section_icons_container_grid_element">
-                <div class="es-section_icons_container_grid_element_icon">
-                  <img src="images/icon3.png" aria-hidden="true" />
-                </div>
-                Niekomedogenny
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="es-section_usage">
-          <div class="es-section_usage_container">
-            <h2>Sposób użycia</h2>
-            <p>1. Nałóż na&nbsp;oczyszczoną skórę twarzy rano i&nbsp;wieczorem</p>
-            <p>2. Rozprowadź równomiernie</p>
-            <p>3. Odpowiedni do twarzy i&nbsp;okolic oczu</p>
-          </div>
-          <img src="images/woman_holding.png" alt="" />
-        </div>
-        <div class="es-section_routine">
-          <h2>Nasza najlepsza rutyna dla&nbsp;intensywnego nawilżenia i&nbsp;ukojenia skóry twarzy</h2>
-          <div class="es-section_routine_podium">
-            <div class="es-section_routine_podium_element">
-              <div>
-                <h3>Vichy Mineral 89</h3>
-                <h4>Booster do twarzy</h4>
-                <p>Serum nawilżająco-wzmacniające</p>
-                <a href="#" class="es-podium-link">Sprawdź</a>
-              </div>
-              <div class="es-podium_fleximg">
-                <img src="images/mineral_booster.png" alt="" />
-              </div>
-            </div>
-            <div class="es-section_routine_podium_element">
-              <div>
-                <h3>Vichy Mineral 89</h3>
-                <h4>Krem do twarzy 72h</h4>
-                <p>Krem nawilżająco-odbudowujący 72h o&nbsp;lekkiej konsystencji</p>
-                <a href="#" class="es-podium-link">Sprawdź</a>
-              </div>
-              <div class="es-podium_fleximg">
-                <img src="images/mineral.png" alt="" />
-              </div>
-            </div>
-            <div class="es-section_routine_podium_element">
-              <div>
-                <h3>Vichy Mineral 89</h3>
-                <h4>Booster pod oczy</h4>
-                <p>Serum wzmacniające skórę pod&nbsp;oczami</p>
-                <a href="#" class="es-podium-link">Sprawdź</a>
-              </div>
-              <div class="es-podium_fleximg">
-                <img src="images/mineral_eyes.png" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <p class="footer">
-          <sup>1</sup>Test aparaturowy. <sup>2</sup>Badanie aparaturowe pomiaru TEWL w&nbsp;porównaniu
-          do&nbsp;uszkodzonej skóry bez&nbsp;użycia produktu.
-        </p>
       </div>
+      <div class="es-section_icons">
+        <div class="es-section_icons_container">
+          <h2>Geras odos toleravimas</h2>
+          <div class="es-section_icons_container_grid">
+            <div class="es-section_icons_container_grid_element">
+              <div class="es-section_icons_container_grid_element_icon">
+                <img src="./assets/images/icon1.png" aria-hidden="true" />
+              </div>
+              <p>Tinka jautriai odai</p>
+            </div>
+            <div class="es-section_icons_container_grid_element">
+              <div class="es-section_icons_container_grid_element_icon">
+                <img src="./assets/images/icon2.png" aria-hidden="true" />
+              </div>
+              <p>Dermatologiškai patikrinta</p>
+            </div>
+            <div class="es-section_icons_container_grid_element">
+              <div class="es-section_icons_container_grid_element_icon">
+                <img src="./assets/images/icon3.png" aria-hidden="true" />
+              </div>
+              <p>Nekemša porų</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="es-section_usage">
+        <div class="es-section_usage_container">
+          <h2>Naudojimo instrukcijos</h2>
+          <p>1. Tepkite ant nuvalytos veido odos ryte ir vakare.</p>
+          <p>2. Tolygiai paskirstykite.</p>
+          <p>3. Tinka veidui ir akių sričiai.</p>
+        </div>
+        <img src="./assets/images/woman_holding.png" alt="" />
+      </div>
+      <div class="es-section_routine">
+        <h2>Mūsų geriausia procedūra intensyviai<br>
+          drėkinančiai ir raminančiai veido odai</h2>
+        <div class="es-section_routine_podium">
+          <div class="es-section_routine_podium_element">
+            <div>
+              <h3>Vichy Mineral 89</h3>
+              <h4>Stiprina veido odą</h4>
+              <p>Drėkinamasis ir stiprinamasis serumas</p>
+              <a href="https://www.benu.lt/grozio-ir-odos-prieziura/veido-odos-prieziura/vichy-serumas-mineral-89-50-ml" class="es-podium-link">pirkti</a>
+            </div>
+            <div class="es-podium_fleximg">
+              <img src="./assets/images/mineral_booster.png" alt="" />
+            </div>
+          </div>
+          <div class="es-section_routine_podium_element">
+            <div>
+              <h3>Vichy Mineral 89</h3>
+              <h4>Veido kremas 72h</h4>
+              <p>72 val. drėkinamasis ir atkuriamasis lengvos tekstūros kremas</p>
+              <a href="https://www.benu.lt/grozio-ir-odos-prieziura/veido-odos-prieziura/vichy-drekinamasis-kremas-mineral-89-light-cream-50-ml" class="es-podium-link">pirkti</a>
+            </div>
+            <div class="es-podium_fleximg">
+              <img src="./assets/images/mineral_2.png" alt="" />
+            </div>
+          </div>
+          <div class="es-section_routine_podium_element">
+            <div>
+              <h3>Vichy Mineral 89</h3>
+              <h4>Stiprina paakių odą</h4>
+              <p>Stiprinamasis paakių serumas</p>
+              <a href="https://www.benu.lt/grozio-ir-odos-prieziura/veido-odos-prieziura/vichy-stiprinamoji-priemone-akiu-sriciai-mineral-89-15-ml" class="es-podium-link">pirkti</a>
+            </div>
+            <div class="es-podium_fleximg">
+              <img src="./assets/images/mineral_eyes.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="footer">
+        <sup>1</sup>Instrumentinis tyrimas. <sup>2</sup>Instrumentinis tyrimas, kurio metu buvo matuojamas TEW+G3L ir
+        lyginami rezultatai su pažeistos odos, kuriai produktas nenaudotas. <sup>3</sup>Vartotojų tyrimas.
+      </p>
     </div>
-    <!-- Copy up to this line -->
-  </body>
+  </div>
+</body>
+
 </html>
